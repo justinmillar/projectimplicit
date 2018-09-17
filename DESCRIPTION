@@ -1,0 +1,14 @@
+Package: projectimplicit
+Type: Package
+Title: Explore Project Implicit data
+Version: 0.1.0
+Author: Liz Redford
+Maintainer: Liz Redford <lizzie.redford@gmail.com>
+Description: TBA
+    TBA
+License: TBA
+Encoding: UTF-8
+LazyData: true
+Imports:
+    haven,
+    dplyr
