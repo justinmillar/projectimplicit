@@ -1,10 +1,10 @@
 #' # Break data into discrete categories for coloring-by in histogram. Returns a vector with one of three
 #' labels: "Pro-Black Preference"; "No Preference"; "Pro-White Preference"
 #' @param iatscore IAT score
-#' @keywords
+#' @keywords iat implicit
 #' @export
 #' @examples
-#' corrsig()
+#' abs_preference()
 
 abs_preference <- function(iatscore) {
   Preference <- cut(iatscore,

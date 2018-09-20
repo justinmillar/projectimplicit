@@ -2,7 +2,7 @@
 #'
 #' Conditionally prints correlation significance level
 #' @param corrsigvalue Exact significance level
-#' @keywords
+#' @keywords correlation iat implicit
 #' @export
 #' @examples
 #' corrsig()

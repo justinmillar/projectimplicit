@@ -1,6 +1,6 @@
-# Define function that prints size of correlation coefficients
+#' Define function that prints size of correlation coefficients
 #' @param corrtestvalue Exact correlation value
-#' @keywords
+#' @keywords correlation iat implicit
 #' @export
 #' @examples
 #' correffectsize()
