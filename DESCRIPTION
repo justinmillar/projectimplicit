@@ -9,7 +9,5 @@ Description: TBA
 License: TBA
 Encoding: UTF-8
 LazyData: true
-Imports:
-    haven,
-    dplyr
+Imports: glue
 RoxygenNote: 6.1.0
