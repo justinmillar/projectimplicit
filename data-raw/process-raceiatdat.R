@@ -12,10 +12,6 @@ write_csv(raceiatdat, "raceiatdat.csv") # Export data
 # Set up the data-raw directory
 devtools::use_data_raw()
 
-# Create a data processing script in the data-raw directory.
-# You can use any name you want.
-file.create("data-raw/process.R")
-
 # This script in the R directory will contain the documentation.
 # You can use any name you want.
 file.create("R/raceiatdat.R")
