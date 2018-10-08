@@ -5,10 +5,10 @@
 #' @examples
 #' participants()
 
-participants <- function(raceiatdat) {
-racecount<-as.data.frame(table(raceiatdat$raceomb))
-pctwhite<-sum(racecount$Freq[racecount$Var1==6])
-  glue('There were {nrow(raceiatdat)} participants. The sample was {(pctwhite/nrow(raceiatdat)*100)}% White')
+participants <- function(data) {
+racecount <- as.data.frame(table(data$raceomb))
+pctwhite <- sum(racecount$Freq[racecount$Var1==6])
+  glue('There were {nrow(data)} participants. The sample was {(pctwhite/nrow(data)*100)}% White')
 }
 
-participants(raceiatdat)
+participants(data = raceiatdat)
