@@ -6,11 +6,11 @@
 #' correffectsize()
 #'
 correffectsize <- function(corrtestvalue) {
- if (corrtestvalue < .09) {
+ if (abs(corrtestvalue) < .09) {
       print("negligible")
-    } else if (corrtestvalue > .09 & corrtestvalue < .291) {
+    } else if (abs(corrtestvalue) > .09 & abs(corrtestvalue) < .291) {
       print("small")
-    } else if (corrtestvalue > .291 & corrtestvalue < .491) {
+    } else if (abs(corrtestvalue) > .291 & abs(corrtestvalue) < .491) {
       print("medium")
     } else {
       print ("large")
