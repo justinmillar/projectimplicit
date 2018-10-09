@@ -1,0 +1,28 @@
+---
+title: "test"
+author: "Liz Redford"
+date: "October 8, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+# this will run .R files to get function into environment
+source("R/participants_asglue.R")
+source("R/participants.R")
+data(raceiatdat)
+
+```
+
+
+```{r}
+participants_asglue(data = raceiatdat)
+```
+
+```{r include = FALSE}
+participants(data = raceiatdat)
+pctwhite <- participants(data = raceiatdat)
+```
+
+There were `r nrow(raceiatdat)` participants. 
+The sample was `r pctwhite`% White
