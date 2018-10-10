@@ -10,19 +10,25 @@ output: html_document
 # this will run .R files to get function into environment
 source("R/participants_asglue.R")
 source("R/participants.R")
+source("R/corrsig.R")
+source("R/correffectsize.R")
 data(raceiatdat)
-
+library(numform)
 ```
-
-
-```{r}
-participants_asglue(data = raceiatdat)
-```
-
 ```{r include = FALSE}
 participants(data = raceiatdat)
 pctwhite <- participants(data = raceiatdat)
 ```
 
 There were `r nrow(raceiatdat)` participants. 
-The sample was `r pctwhite`% White
+The sample was `r pctwhite`% White.
+
+The average IAT score was `r round(mean(raceiatdat$Implicit),2)`.
+
+```{r include = FALSE}
+corrtest <- cor.test(raceiatdat$Explicit, raceiatdat$politics, method = "pearson", use = "complete.obs")
+correffectsize <- correffectsize(corrtest$estimate)
+corrsig <- corrsig(corrtest$p.value)
+```
+
+There was a  `r correffectsize` correlation between political ideology and scores on the Race IAT, *r* = `r numform::f_num(corrtest$estimate, digits = 3)`, *p* = `r corrsig`.
