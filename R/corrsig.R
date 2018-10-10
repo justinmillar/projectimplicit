@@ -9,8 +9,8 @@
 
 corrsig <- function(corrsigvalue) {
     if (corrsigvalue < .001) {
-      print("p < .001")
+      print(".001")
     } else {
-      print(paste0("p = ", round(corrsigvalue, digits = 3)))
+      print(round(corrsigvalue, digits = 3))
     }
 }
