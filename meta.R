@@ -27,5 +27,3 @@ requireNamespace(x, quietly = TRUE)
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-
-
