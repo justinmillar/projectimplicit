@@ -1,9 +1,10 @@
 ---
-title: "test"
-author: "Liz Redford"
-date: "October 8, 2018"
+title: "Manuscript title"
+author: "Author name(s)"
 output: html_document
 ---
+
+**Method**
 
 ```{r setup, include=FALSE}
 
@@ -12,21 +13,27 @@ source("R/participants_asglue.R")
 source("R/participants.R")
 source("R/corrsig.R")
 source("R/correffectsize.R")
-data(raceiatdat)
 library(numform)
-```
-```{r include = FALSE}
-participants(data = raceiatdat)
-pctwhite <- participants(data = raceiatdat)
+
+# Get & rename data
+data(raceiatdat)
+workingdata <- raceiatdat
 ```
 
-There were `r nrow(raceiatdat)` participants. 
+```{r include = FALSE}
+participants(data = workingdata)
+pctwhite <- participants(data = workingdata)
+```
+
+There were `r nrow(workingdata)` participants. 
 The sample was `r pctwhite`% White.
 
-The average IAT score was `r round(mean(raceiatdat$Implicit),2)`.
+**Results**
+
+The average IAT score was `r round(mean(workingdata$Implicit),2)`.
 
 ```{r include = FALSE}
-corrtest <- cor.test(raceiatdat$Explicit, raceiatdat$politics, method = "pearson", use = "complete.obs")
+corrtest <- cor.test(workingdata$Explicit, workingdata$politics, method = "pearson", use = "complete.obs")
 correffectsize <- correffectsize(corrtest$estimate)
 corrsig <- corrsig(corrtest$p.value)
 ```
