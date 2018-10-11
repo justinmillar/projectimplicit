@@ -7,5 +7,6 @@
 
 participants <- function(data) {
 racecount <- as.data.frame(table(data$raceomb))
-pctwhite <- sum(racecount$Freq[racecount$Var1==6])
+pctwhite <- (round(sum(racecount$Freq[racecount$Var1 == 6])/sum(racecount$Freq),2))*100
 }
+
