@@ -15,9 +15,6 @@ source("R/corrsig.R")
 source("R/correffectsize.R")
 library(numform)
 
-# Get & rename data
-data(raceiatdat)
-workingdata <- raceiatdat
 ```
 
 ```{r include = FALSE}
@@ -30,7 +27,11 @@ The sample was `r pctwhite`% White.
 
 **Results**
 
-The average IAT score was `r round(mean(workingdata$Implicit),2)`.
+```{r include = FALSE}
+abs_preference <- abs_preference(iatscore = mean(workingdata$Implicit))
+```
+
+The average IAT score was `r round(mean(workingdata$Implicit),2)`, which indicates `r abs_preference`.
 
 ```{r include = FALSE}
 corrtest <- cor.test(workingdata$Explicit, workingdata$politics, method = "pearson", use = "complete.obs")
