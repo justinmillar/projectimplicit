@@ -4,13 +4,14 @@
 #' @keywords iat implicit
 #' @export
 #' @examples
-#' abs_preference()
+#' abspref3()
 
-abs_preference <- function(iatscore) {
+abspref3 <- function(iatscore) {
   Preference <- cut(iatscore,
     breaks = c(-Inf, -.15, .15, Inf),
-    labels = c("Pro-Black Preference",
-               "No Preference",
-               "Pro-White Preference"),
+    labels = c("a pro-Black preference",
+         "no preference",
+          "a pro-White preference"),
     right = FALSE)
 }
+
