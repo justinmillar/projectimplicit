@@ -12,6 +12,7 @@ Write methods & results using
 writemr(workingdata = raceiatdat) 	 
 
 **How to write a methods & results section using other data**  
+
 Open methods-results.Rmd  
 Follow data formatting rules (TBA)  
 Run writemr(), setting “workingdata” argument to the name of your data object
