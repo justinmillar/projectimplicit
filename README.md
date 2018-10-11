@@ -6,10 +6,8 @@ This package was made by Liz Redford using the publicly-available Project Implic
 
 **How to write a methods & results section using built-in data**  
 
-Activate built-in dataset using   
-data(raceiatdat)  
-Write methods & results using  
-writemr(workingdata = raceiatdat) 	 
+Activate built-in dataset using ```data(raceiatdat)```
+Write methods & results using ```writemr(workingdata = raceiatdat)```
 
 **How to write a methods & results section using other data**  
 
