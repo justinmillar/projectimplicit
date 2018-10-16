@@ -6,7 +6,7 @@
 #' #'
 #' @docType data
 #'
-#' @usage data(raceiatdat)
+#' @usage data(raceiatdat100)
 #'
 #' @format A data frame with 100 rows and 22 columns.
 #'

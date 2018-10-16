@@ -1,0 +1,46 @@
+---
+title: "Manuscript title"
+author: "Author name(s)"
+output: html_document
+---
+
+**Method**
+
+
+```{r include = FALSE}
+# this will run .R files to get function into environment
+source("R/participants_asglue.R")
+source("R/participants.R")
+source("R/corrsig.R")
+source("R/abspref6.R")
+source("R/correffectsize.R")
+library(numform)
+library(projectimplicit)
+
+# delete this if using writemr()
+data(raceiatdat100)
+workingdata=raceiatdat100
+
+# Keep this
+participants(data = workingdata)
+pctwhite <- participants(data = workingdata)
+```
+
+There were `r nrow(workingdata)` participants. 
+The sample was `r pctwhite`% White.
+
+**Results**
+
+```{r include = FALSE}
+abspref6 <- abspref6(iatscore = mean(workingdata$implicit))
+```
+
+The average IAT score was `r round(mean(workingdata$implicit),2)`, which indicates `r abspref6`.
+
+```{r include = FALSE}
+corrtest <- cor.test(workingdata$explicit, workingdata$politics, method = "pearson", use = "complete.obs")
+correffectsize <- correffectsize(corrtest$estimate)
+corrsig <- corrsig(corrtest$p.value)
+```
+
+There was a  `r correffectsize` correlation between political ideology and scores on the Race IAT, *r* = `r numform::f_num(corrtest$estimate, digits = 3)`, *p* = `r corrsig`.

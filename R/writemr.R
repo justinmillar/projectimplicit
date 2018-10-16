@@ -7,8 +7,8 @@
 #' @examples
 #' writemr()
 
-writemr <- function(workingdata = raceiatdat) {
-  data(raceiatdat)
+writemr <- function(workingdata = raceiatdat100) {
+  data(raceiatdat100)
   rmarkdown::render("method-results.Rmd")
 }
 
