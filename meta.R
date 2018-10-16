@@ -4,8 +4,19 @@ library(roxygen2)
 library(testthat)
 library(knitr)
 
+# Make this .Rnot be included when pkg is built
+devtools::use_build_ignore("meta.R")
+
+# Testing
+
 abspref3 <- abspref3(mean(raceiatdat$Implicit))
 abspref3
+
+# Create vignettes -----
+# This will create vignettes directory and create first vignette named methods-results-vignette1
+devtools::use_vignette("methods-results-vignette1")
+# Then add "VignetteBuilder: knitr" to DESCRIPTION
+devtools::build_vignettes()
 
 # Document/create NAMESPACE and .Rd files -----
 # use Roxygen2 (or really the document function in the devtools package) to process those comments and create the NAMESPACE and .Rd files.
