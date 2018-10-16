@@ -5,7 +5,7 @@
 \title{# Break data into discrete categories for coloring-by in histogram. Returns a vector with one of three
 labels: "Pro-Black Preference"; "No Preference"; "Pro-White Preference"}
 \usage{
-abspref3(iatscore)
+abspref3(workingdata = raceiatdat, Implicit)
 }
 \arguments{
 \item{iatscore}{IAT score}

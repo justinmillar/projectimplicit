@@ -1,5 +1,4 @@
-#' # Break data into discrete categories for coloring-by in histogram. Returns a vector with one of three
-#' labels: "Pro-Black Preference"; "No Preference"; "Pro-White Preference"
+#' # Break data into discrete categories for coloring-by in histogram. Returns a vector with one of six labels
 #' @param iatscore IAT score
 #' @keywords iat implicit
 #' @export

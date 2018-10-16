@@ -2,8 +2,7 @@
 % Please edit documentation in R/abspref6.R
 \name{abspref6}
 \alias{abspref6}
-\title{# Break data into discrete categories for coloring-by in histogram. Returns a vector with one of three
-labels: "Pro-Black Preference"; "No Preference"; "Pro-White Preference"}
+\title{# Break data into discrete categories for coloring-by in histogram. Returns a vector with one of six labels}
 \usage{
 abspref6(iatscore)
 }
@@ -11,8 +10,7 @@ abspref6(iatscore)
 \item{iatscore}{IAT score}
 }
 \description{
-# Break data into discrete categories for coloring-by in histogram. Returns a vector with one of three
-labels: "Pro-Black Preference"; "No Preference"; "Pro-White Preference"
+# Break data into discrete categories for coloring-by in histogram. Returns a vector with one of six labels
 }
 \examples{
 abspref6()
