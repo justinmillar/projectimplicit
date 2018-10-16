@@ -28,10 +28,10 @@ The sample was `r pctwhite`% White.
 **Results**
 
 ```{r include = FALSE}
-abspref6 <- abspref6(iatscore = mean(workingdata$Implicit))
+abspref3 <- abspref3(iatscore = mean(workingdata$Implicit))
 ```
 
-The average IAT score was `r round(mean(workingdata$Implicit),2)`, which indicates `r abspref6`.
+The average IAT score was `r round(mean(workingdata$Implicit),2)`, which indicates `r abspref3`.
 
 ```{r include = FALSE}
 corrtest <- cor.test(workingdata$Explicit, workingdata$politics, method = "pearson", use = "complete.obs")
