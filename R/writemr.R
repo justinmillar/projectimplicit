@@ -7,8 +7,9 @@
 #' @examples
 #' writemr()
 
-writemr <- function(workingdata = raceiatdat100) {
-  data(raceiatdat100)
-  rmarkdown::render("method-results.Rmd")
+writemr <- function() {
+  path <- system.file("rmd", "report.Rmd", package = "projectimplicit")
+  rmarkdown::render(path, output_file = "~/report.html")
+  utils::browseURL("report.html")
 }
 

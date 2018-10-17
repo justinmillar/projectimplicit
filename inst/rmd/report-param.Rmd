@@ -2,6 +2,12 @@
 title: "Manuscript title"
 author: "Author name(s)"
 output: html_document
+params:
+  data: 
+    label: "Input dataset:"
+    value: raceiatdat100
+    input: select
+    choices: [raceiatdat100, raceiatdat8000]
 ---
 
 **Method**
@@ -9,15 +15,15 @@ output: html_document
 ```{r setup, include=FALSE}
 
 # this will run .R files to get function into environment
-source("R/participants_asglue.R")
-source("R/participants.R")
-source("R/corrsig.R")
-source("R/correffectsize.R")
 library(numform)
-
+library(projectimplicit)
 ```
 
 ```{r include = FALSE}
+
+file <- paste0(params$data, ".csv")
+path <- system.file("extdata", file, package = "projectimplicit", mustWork = T)
+workingdata <- read.csv(path)
 participants(data = workingdata)
 pctwhite <- participants(data = workingdata)
 ```
@@ -28,13 +34,13 @@ The sample was `r pctwhite`% White.
 **Results**
 
 ```{r include = FALSE}
-abspref3 <- abspref3(iatscore = mean(workingdata$Implicit))
+abspref3 <- abspref3(iatscore = mean(workingdata$implicit))
 ```
 
 The average IAT score was `r round(mean(workingdata$Implicit),2)`, which indicates `r abspref3`.
 
 ```{r include = FALSE}
-corrtest <- cor.test(workingdata$Explicit, workingdata$politics, method = "pearson", use = "complete.obs")
+corrtest <- cor.test(workingdata$explicit, workingdata$politics, method = "pearson", use = "complete.obs")
 correffectsize <- correffectsize(corrtest$estimate)
 corrsig <- corrsig(corrtest$p.value)
 ```

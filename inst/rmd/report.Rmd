@@ -1,0 +1,40 @@
+---
+title: "Manuscript title"
+author: "Author name(s)"
+output: html_document
+---
+
+**Method**
+
+```{r setup, include=FALSE}
+
+# this will run .R files to get function into environment
+library(numform)
+library(projectimplicit)
+```
+
+```{r include = FALSE}
+workingdata <- raceiatdat8000
+
+participants(data = workingdata)
+pctwhite <- participants(data = workingdata)
+```
+
+There were `r nrow(workingdata)` participants. 
+The sample was `r pctwhite`% White.
+
+**Results**
+
+```{r include = FALSE}
+abspref3 <- abspref3(iatscore = mean(workingdata$implicit))
+```
+
+The average IAT score was `r round(mean(workingdata$Implicit),2)`, which indicates `r abspref3`.
+
+```{r include = FALSE}
+corrtest <- cor.test(workingdata$explicit, workingdata$politics, method = "pearson", use = "complete.obs")
+correffectsize <- correffectsize(corrtest$estimate)
+corrsig <- corrsig(corrtest$p.value)
+```
+
+There was a  `r correffectsize` correlation between political ideology and scores on the Race IAT, *r* = `r numform::f_num(corrtest$estimate, digits = 3)`, *p* = `r corrsig`.
